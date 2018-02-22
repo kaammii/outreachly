@@ -238,7 +238,7 @@ class App extends Component {
             
                 <div className="row">
                     <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 play content_anim11 animated fadeInUp">
-                        <a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#video_modal_box" data-lightbox-type="inline" className="btn waves-effect waves-light" id="Play_Video">Play Video</a>    
+                        <a data-lightbox-type="inline" className="btn waves-effect waves-light" id="Play_Video">Play Video</a>    
                     </div>
                 </div>
 
@@ -451,7 +451,7 @@ class App extends Component {
 
                     {/* Newsletter Form */}
                     <div className="newsletter_form">
-                        <form action="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/php/send.php" method="post" id="subscribe-form" _lpchecked="1">
+                        <form>
                         <div className="input-field">
                             <div data-icon="" className="prefix"></div>
                             <input id="email" onChange={(e)=> this.setState({newsletterEmail: e.target.value})} type="email" name="email" className="validate"/>
@@ -542,7 +542,7 @@ class App extends Component {
                         </div>  
                         {/* //Social Icons */}
 
-                    <p><small>Copyright © 2015 James, Made with ❤ by Mat Przegietka</small></p> 
+                    <p><small>Copyright © 2018 OutReachly</small></p> 
                     </div>
                 </div>              
             </div>
