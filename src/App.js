@@ -1,260 +1,554 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {RaisedButton} from 'material-ui';
 import './main.css';
-
+import homeBackground from './images/home_background_01.jpg';
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+        name: '',
+        email: '',
+        message: '',
+        newsletterEmail: ''
+    }
+  }
   render() {
     return (
-      <div>
+    <div>        
+    <div className="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+        <div className="mobile_nav_close_button"><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html" id="hideRight" className="active"><div data-icon="" className="button_icon close_icon"></div></a></div>
+        <nav id="mobile_menu_content" className="">
+            <a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#more_info">Overview</a>
+            <a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#features">Features</a>
+            <a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#features_video">Video</a>
+            <a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#reviews">Reviews</a>
+            <a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#screenshots">Screenshots</a>
+            <a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#contact">Contact</a>
+        </nav>
+    </div>
+    
+  
+    <div className="loaded">
+            
+        {/* Fullscreen homepage */}
+        <section className="hero_fullscreen background_single menu_bar-waypoint" data-animate-down="menu_bar-hide" data-animate-up="menu_bar-hide" style={{height: 588}}>
+        {/* This section className is where you can edit background choice (background_single, background_slider, background_video) you can also enable gradient overlay (gradient_overlay) and mockups (mockups)*/}
         
-        <header id="hero" className="hero overlay">
-            <nav className="navbar">
-                <div className="container">
-                    <div className="navbar-header">
-                        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-                            <span className="sr-only">Toggle navigation</span>
-                            <span className="fa fa-bars"></span>
-                        </button>
-                        <a href="/index.html" className="brand">
-                            <img src="assets/images/logo.png" alt="Knowledge" />
-                        </a>
+
+            {/* Logo and navigation */}
+            <div className="container top_bar">
+                <div className="row">
+                    <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <img src="./JAMES App Landing Page_files/logo_light.png" alt="logo" className="logo"/>
+                    <nav className="navigation_desktop">
+                        <ul>
+                            <li className=""><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#more_info" className="visible-lg visible-md go_to_overview">Overview</a></li>
+                            <li className=""><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#features" className="visible-lg visible-md">Features</a></li>
+                            <li className=""><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#features_video" className="visible-lg visible-md">Video</a></li>
+                            <li className=""><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#reviews" className="visible-lg visible-md">Reviews</a></li>
+                            <li className=""><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#screenshots" className="visible-lg visible-md">Screenshots</a></li>
+                            <li className=""><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#contact" className="visible-lg visible-md">Contact</a></li>
+                            <li><div className="mobile_nav_open_button hidden-lg hidden-md"><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html" id="showRight_1" className="active"><div data-icon="" className="button_icon close_icon"></div></a></div></li>
+                        </ul>
+                    </nav>
                     </div>
-                    <div className="navbar-collapse collapse" id="navbar-collapse">
-                        <ul className="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="/">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="archive.html">
-                                    Archive
-                                </a>
-                            </li>
-                            <li>
-                                <a href="browse.html">
-                                    Browse
-                                </a>
-                            </li>
-                            <li>
-                                <a href="login.html">
-                                    Login
-                                </a>
-                            </li>
-                            <li>
-                                 <a href="register.html" className="btn btn-success nav-btn">Sign Up</a>
-                            </li>
+                </div>
+            </div>
+            {/* //Logo and navigation */}
+
+
+            {/* Main content */}
+            <div className="container align-center" id="main_content">
+                <div className="content_container row">
+                    <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 home_content">
+                        <h2 className="slogan">Attract Infuencers Build Relationships</h2>
+                        
+                        {/* CTA Buttons*/}
+                        <div className="cta_button_area">
+                            <div><RaisedButton primary={true} label={'Sign up'} /></div>
+                            <a><small>Not sure? Learn more.</small></a> 
+                        </div>
+                        {/* //CTA Buttons*/}
+                                    
+                    </div>
+                    
+                    {/* Mockups*/}
+                    <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 home_mockup">
+                        <img src="./JAMES App Landing Page_files/back.png" alt="" className="mockup-animation1 home_mockup_image"/>
+                        <img src="./JAMES App Landing Page_files/front.png" alt="" className="mockup-animation2 home_mockup_image"/>                 
+                    </div>
+                    {/* //Mockups*/}
+                    
+                </div>          
+            </div>  
+            {/* //Main content */}
+            
+            
+            {/* Video Background */}
+            <div id="maximage_video">
+                <video width="896" height="504" style={{height: 759, width: 1349, marginTop: '-85.5px', marginLeft: 0}}>
+                    <source src="video/video.mp4" type="video/mp4"/>
+                    <source src="video/video.webm" type="video/webm"/>
+                    <source src="video/video.ogv" type="video/ogg"/>
+                </video>
+            </div>
+            {/* //Video Background */}
+            
+            
+            {/* Slider Background */}
+            {/* <div id="maximage_slider" className="mc-cycle" style="width: 1366px; height: 588px;">
+                
+            <div className="mc-image " title="" style="background-image: url(&quot;images/background_slider_01.jpg&quot;); background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 1366px; height: 588px;" data-href=""></div><div className="mc-image " title="" style="background-image: url(&quot;images/background_slider_02.jpg&quot;); background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: none; z-index: 4; width: 1366px; height: 588px; opacity: 0;" data-href=""></div><div className="mc-image " title="" style="background-image: url(&quot;images/background_slider_03.jpg&quot;); background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: none; z-index: 4; width: 1366px; height: 588px; opacity: 0;" data-href=""></div><div className="mc-image " title="" style="background-image: url(&quot;images/background_slider_04.jpg&quot;); background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: block; z-index: 4; width: 1366px; height: 588px; opacity: 0;" data-href=""></div></div> */}
+            {/* //Slider Background */}
+            
+            
+            {/* Single Image Background */}
+            <div id="maximage_single" className="mc-cycle" style={{opacity: 1, height: 588, width: 1366}}>
+                
+            <div className="mc-image " title="" style={{backgroundImage: `url(${homeBackground})`, height: 588, width: 1366}} data-href=""></div></div>
+            {/* //Single Image Background */}
+            
+            
+        </section>{/* //Homepage */}
+        
+        
+        {/* Menu bar */}
+        <header id="menu_bar" className="menu_bar menu_bar-hide">
+            <div className="container">
+                <a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html" className="go_to_home logo_dark"><img src="./JAMES App Landing Page_files/logo_dark.png" alt="logo" className="logo"/></a>
+                <a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html" className="go_to_home logo_light"><img src="./JAMES App Landing Page_files/logo_light.png" alt="logo" className="logo"/></a>
+                <nav className="menu_bar_navigation">
+                    <ul>
+                        <li className="visible-lg visible-md"><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#more_info" className="go_to_overview">Overview</a></li>
+                        <li className="visible-lg visible-md"><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#features">Features</a></li>
+                        <li className="visible-lg visible-md"><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#features_video">Video</a></li>
+                        <li className="visible-lg visible-md"><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#reviews">Reviews</a></li>
+                        <li className="visible-lg visible-md"><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#screenshots">Screenshots</a></li>
+                        <li className="visible-lg visible-md"><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#contact">Contact</a></li>
+                        <li className="visible-lg visible-md last-item"><button className="btn waves-effect waves-light subscribe-submit">Purchase</button></li>
+                        <li className="hidden-lg hidden-md"><div className="mobile_nav_open_button"><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html" id="showRight_2"><div data-icon="" className="button_icon close_icon"></div></a></div></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>{/* // Menu bar */}
+    
+        
+        {/* More Info #################### */}
+        
+        <section id="more_info" data-animate-down="menu_bar-show" data-animate-up="menu_bar-hide" className="menu_bar-waypoint subsection">
+            <div className="container">
+                <div className="row">
+                    <div className="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 align-center content_anim1 intro animated fadeInUp">
+                        <h3>The best way to show your app to the world</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>  
+                    </div>
+                </div>              
+            </div>
+            
+            <div className="more_info_mockup content_anim2  animated fadeInUp">
+                <img src={require('./images/mockups/subsection_mockups/1.png')} alt="" className="img_responsive"/>
+            </div>
+            
+            <div className="container">
+                <div className="row">
+                
+                    <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <div className="iconbox content_anim3 animated fadeInUp">
+                            <div data-icon="" className="iconbox_icon"></div>
+                            <div className="iconbox_content">
+                                <h5>Responsive Design</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore.</p>
+                            </div>
+                        </div>  
+                    </div>
+                    
+                    <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <div className="iconbox content_anim4 animated fadeInUp">
+                            <div data-icon="" className="iconbox_icon"></div>
+                            <div className="iconbox_content">
+                                <h5>Clean Code</h5>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                            </div>
+                        </div>  
+                    </div>
+                    
+                    <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <div className="iconbox content_anim5 animated fadeInUp">
+                            <div data-icon="" className="iconbox_icon"></div>
+                            <div className="iconbox_content">
+                                <h5>1500+ Icons</h5>
+                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>  
+                    </div>
+                    
+                </div>              
+            </div>
+            
+        </section>{/* //More info */}
+        
+        
+        
+        {/* Features #################### */}
+        
+        <section id="features" className="subsection">
+            <div className="container">
+                <div className="row">
+                
+                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div className="mockup_container">
+                        <img src={require('./images/mockups/subsection_mockups/2a.png')} alt="" className="img_responsive mockup_back content_anim10 animated fadeInUp"/>
+                        <img src={require('./images/mockups/subsection_mockups/2b.png')} alt="" className="img_responsive mockup_front content_anim9 animated fadeInUp"/>    
+                        </div>
+                    </div>
+                    
+                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    
+                        <div className="intro content_anim6 animated fadeInUp">
+                            <h3>Present your app in a beautiful and elegant way.</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        </div>
+                        
+                        <div className="iconbox content_anim7 animated fadeInUp">
+                            <div data-icon="" className="iconbox_icon"></div>
+                            <div className="iconbox_content">
+                                <h5>Creative Design</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore aliqua.</p>
+                            </div>
+                        </div>
+                        
+                        <div className="iconbox content_anim8 animated fadeInUp">
+                            <div data-icon="" className="iconbox_icon"></div>
+                            <div className="iconbox_content">
+                                <h5>Cross-Browser Support</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore aliqua.</p>
+                            </div>
+                        </div>
+                            
+                    </div>
+                </div>              
+            </div>  
+        </section>{/* //Features */}
+        
+        
+        {/* Features - Video #################### */}
+        
+        <section id="features_video" className="subsection">
+            <div className="container">
+            
+                <div className="row">
+                    <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 play content_anim11 animated fadeInUp">
+                        <a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html#video_modal_box" data-lightbox-type="inline" className="btn waves-effect waves-light" id="Play_Video">Play Video</a>    
+                    </div>
+                </div>
+
+                {/* Video - lightbox */}
+                <div id="video_modal_box" style={{display:'none', background:'white'}}>
+                    <div className="fluid-width-video-wrapper" style={{paddingTop: '56.2%'}}>
+                        {/*<iframe src="./JAMES App Landing Page_files/120433187.html" id="fitvid548020"></iframe>*/}
+                    </div>
+                </div>
+                {/* //Video - lightbox */}
+
+                <div className="row">
+                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div className="intro content_anim12 animated fadeInUp">
+                            <h3>Use video to show how awesome your app is!</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        </div>
+                    </div>
+                    <div className="col-xs-12 col-sm-5 col-md-5 col-lg-5 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+                        <ul className="icon_list">
+                            <li className="content_anim13 animated fadeInUp"><div data-icon="" className="icon_small float-left"></div><h6>Contact &amp; Newsletter Form Included</h6></li>
+                            <li className="content_anim14 animated fadeInUp"><div data-icon="" className="icon_small float-left"></div><h6>Image, Slider, Video Backgrounds</h6></li>
+                            <li className="content_anim15 animated fadeInUp"><div data-icon="" className="icon_small float-left"></div><h6>Mobile App Mockups Included</h6></li>
+                            <li className="content_anim16 animated fadeInUp"><div data-icon="" className="icon_small float-left"></div><h6>Easy To Customise Animations</h6></li>
                         </ul>
                     </div>
                 </div>
-            </nav>
-            <div className="masthead text-center">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-8 col-md-offset-2">
-                            <h1>Knowledgebase</h1>
-                            <p className="lead text-muted">Sed eget orci eleifend enim mattis suscipit. Suspendisse potenti non ipsum.</p>
-                            <form>
-                                <input type="text" className="search-field" placeholder="Search Something ... "/>
-                                <button type="submit"><i className="fa fa-search"></i></button>
-                            </form>
-                            <a href="#" className="btn btn-hero"><span className="icon-git"></span> Github Project<span className="icon-right"></span></a>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </header>
-
-        <section id="features" className="features bgc-light-gray">
-            <div className="container ">
-                <div className="row features-section">
-                    <div className="text-center col-sm-4">
-                        <div className="media-body">
-                            <span className="icon"><img src="assets/images/icon/icon1.png" alt=""/></span>
-                            <h3>Help & Documentation</h3>
-                            <p className="text-muted">Unlike other Frameworks which try to cover everything, It has been built specifically for wordpress</p>
-                        </div>
-                    </div>
-                    <div className="text-center col-sm-4">
-                        <div className="media-body">
-                            <span className="icon"><img src="assets/images/icon/icon2.png" alt=""/></span>
-                            <h3>Developer Resources</h3>
-                            <p className="text-muted">An incredibly codex has been created for you to use as reference when developing extensions</p>
-                        </div>
-                    </div>
-                    <div className="text-center col-sm-4">
-                        <div className="media-body">
-                            <span className="icon"><img src="assets/images/icon/icon3.png" alt=""/></span>
-                            <h3>Community Support</h3>
-                            <p>The source code is available on GitHub, you can grab it and twist it to your heart’s content</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section className="topics">
+        </section>{/* //Features - Video */}
+        
+        
+        {/* Reviews #################### */}
+        
+        <section id="reviews" className="subsection_parallax" data-stellar-background-ratio="0.6" style={{backgroundPosition: '0px 0px'}}>
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-8">
-                        <header>
-                            <h2><span className="icon-pages"></span>Explore Topics</h2>
-                            <p>We did our best to cover all topics related to this product. Each section have number which represent number of topic in each category.</p>
-                        </header>
-                        <div className="row">
-                            <div className="col-sm-6">
-                                <div className="topics-list">
-                                    <h3><a href="#"><span className="badge">19</span>Introduction</a></h3>
-                                    <ul>
-                                        <li><a href="single.html"> How to use this documentation? </a></li>
-                                        <li><a href="single.html"> How to find topics? </a></li>
-                                        <li><a href="single.html"> What is included and why? </a></li>
-                                        <li><a href="single.html"> Basic knowledge requirments. </a></li>
-                                        <li><a href="single.html"> Getting Started & What is next. </a></li>
-                                    </ul>
+                    <div className="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 content_anim17 animated fadeInUp">
+                        <div className="owl-carousel owl-theme" style={{opacity: 1, display: 'block'}}>
+                        
+                            <div className="owl-wrapper-outer"><div className="owl-wrapper" style={{width: 6000, left: 0, display: 'block', transition: 'all 800ms ease', transform: 'translate3d(-750px, 0px, 0px)'}}><div className="owl-item" style={{width: 750}}><div className="single_review">
+                                <img src="./JAMES App Landing Page_files/review_01.jpg" alt="" className="img-circle"/>
+                                <div className="review_content">
+                                    <h6>An elephant and a camel are talking. The elephant asks, "Why do you have boobs on your back?" The camel replies, "Ha! That's a funny question coming from an animal with a penis hanging from his face.”</h6>
+                                    <p>- John McLane, Microsoft</p>
                                 </div>
-                            </div>
-                            <div className="col-sm-6">
-                                <div className="topics-list">
-                                    <h3><a href="#"><span className="badge">7</span>Intallation & Activation</a></h3>
-                                    <ul>
-                                        <li><a href="#"> How to use this documentation? </a></li>
-                                        <li><a href="#"> How to find topics? </a></li>
-                                        <li><a href="#"> What is included and why? </a></li>
-                                        <li><a href="#"> Basic knowledge requirments. </a></li>
-                                        <li><a href="#"> Getting Started & What is next. </a></li>
-                                    </ul>
+                            </div></div><div className="owl-item" style={{width: 750}}><div className="single_review">
+                                <img src="./JAMES App Landing Page_files/review_02.jpg" alt="" className="img-circle"/>
+                                <div className="review_content">
+                                    <h6>I was feeling pretty creaky after hearing the TV reporter say, "To contact me, go to my Facebook page, follow me on Twitter, or try me the old-fashioned way-e-mail.</h6>
+                                    <p>- Jane Kovalsky, Apple</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-sm-6">
-                                <div className="topics-list">
-                                    <h3><a href="#"><span className="badge">5</span>Import & Export</a></h3>
-                                    <ul>
-                                        <li><a href="#"> How to use this documentation? </a></li>
-                                        <li><a href="#"> How to find topics? </a></li>
-                                        <li><a href="#"> What is included and why? </a></li>
-                                        <li><a href="#"> Basic knowledge requirments. </a></li>
-                                        <li><a href="#"> Getting Started & What is next. </a></li>
-                                    </ul>
+                            </div></div><div className="owl-item" style={{width: 750}}><div className="single_review">
+                                <img src="./JAMES App Landing Page_files/review_03.jpg" alt="" className="img-circle"/>
+                                <div className="review_content">
+                                    <h6>A Sergeant was addressing a squad of 25 and said: "I have a nice easy job for the laziest man here.  Put up your hand if you are the laziest."  24 men raised their hands, and the sergeant asked the other man "why didn't you raise your hand?"  The man replied: "Too much trouble raising the hand, Sarge."</h6>
+                                    <p>- Mat Patterson, Google</p>
                                 </div>
-                            </div>
-                            <div className="col-sm-6">
-                                <div className="topics-list">
-                                    <h3><a href="#"><span className="badge">17</span>Settings & Configuration</a></h3>
-                                    <ul>
-                                        <li><a href="#"> How to use this documentation? </a></li>
-                                        <li><a href="#"> How to find topics? </a></li>
-                                        <li><a href="#"> What is included and why? </a></li>
-                                        <li><a href="#"> Basic knowledge requirments. </a></li>
-                                        <li><a href="#"> Getting Started & What is next. </a></li>
-                                    </ul>
+                            </div></div><div className="owl-item" style={{width: 750}}><div className="single_review">
+                                <img src="./JAMES App Landing Page_files/review_04.jpg" alt="" className="img-circle"/>
+                                <div className="review_content">
+                                    <h6>The 21st century: Deleting history is more important than making it.</h6>
+                                    <p>- Billy </p>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4">
-                        <div className="sidebar">
-                            <div className="widget widget-support-forum">
-                                <span className="icon icon-forum"></span>
-                                    <h4>Looking for help? Join Community</h4>
-
-                                    <p>Couldn’t find what your are looking for ? Why not join out support forums and let us help you.</p>
-
-
-                                <a href="#" className="btn btn-success">Support Forum</a>
-                            </div>
-
-
-                            <div className="pt-50">
-                                <div className="topics-list">
-                                    <h3><a href="#"><span className="badge">10</span>API Guide Lines</a></h3>
-                                    <ul>
-                                        <li><a href="#"> How to use this documentation? </a></li>
-                                        <li><a href="#"> How to find topics? </a></li>
-                                        <li><a href="#"> What is included and why? </a></li>
-                                        <li><a href="#"> Basic knowledge requirments. </a></li>
-                                        <li><a href="#"> Getting Started & What is next. </a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                     </div>
-                    <div className="topics-btn text-center">
-                        <a className="btn btn-default" href="archive.html"><span className="icon-adn"></span> Explore All Topics</a>
-                    </div>
-                </div>
-
+                            </div></div></div></div>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                        <div className="owl-controls clickable"><div className="owl-pagination"><div className="owl-page"><span className=""></span></div><div className="owl-page active"><span className=""></span></div><div className="owl-page"><span className=""></span></div><div className="owl-page"><span className=""></span></div></div></div></div>
+                    </div>  
+                </div>      
             </div>
-        </section>
-
-        <section className="support-section text-white section ">
+        </section>{/* //Reviews */}
+        
+        
+        {/* Reviews - Logos #################### */}
+        
+        <section id="reviews_logos" className="subsection">
             <div className="container">
                 <div className="row">
-                    <div className="divider"><i className="fa fa-support"></i></div>
-                    <header className="text-center">
-                        <h2 className="section-title">Get Support From Real People</h2>
-                        <p className="section-subtitle">When you are stuck in something don’t waste your time just let us know we are here to help you</p>
-                    </header>
-                        <ul className="members">
-                            <li><img src="assets/images/u1.png" alt=""/></li>
-                            <li><img src="assets/images/u2.png" alt=""/></li>
-                            <li><img src="assets/images/u3.png" alt=""/></li>
-                            <li><img src="assets/images/u4.png" alt=""/></li>
-                            <li><img src="assets/images/u5.png" alt=""/></li>
-                        </ul>
+                    <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 align-center">
+                        <div className="intro content_anim18 animated fadeInUp">
+                            <h3>Our app in newspapers!</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div className="row">
+                    <div className="col-xs-6 col-sm-4 col-md-2 col-lg-2 reviews_logo content_anim19 animated fadeInUp">
+                        <img src={require('./images/reviews_logos/logo1.png')} alt=""/>
+                    </div>
+                    <div className="col-xs-6 col-sm-4 col-md-2 col-lg-2 reviews_logo content_anim20 animated fadeInUp">
+                        <img src={require('./images/reviews_logos/logo2.png')} alt=""/>
+                    </div>
+                    <div className="col-xs-6 col-sm-4 col-md-2 col-lg-2 reviews_logo content_anim21 animated fadeInUp">
+                        <img src={require('./images/reviews_logos/logo3.png')} alt=""/>
+                    </div>
+                    <div className="col-xs-6 col-sm-4 col-md-2 col-lg-2 reviews_logo content_anim22 animated fadeInUp">
+                        <img src={require('./images/reviews_logos/logo4.png')} alt=""/>
+                    </div>
+                    <div className="col-xs-6 col-sm-4 col-md-2 col-lg-2 reviews_logo content_anim23 animated fadeInUp">
+                        <img src={require('./images/reviews_logos/logo5.png')} alt=""/>
+                    </div>
+                    <div className="col-xs-6 col-sm-4 col-md-2 col-lg-2 reviews_logo content_anim24 animated fadeInUp">
+                        <img src={require('./images/reviews_logos/logo6.png')} alt=""/>
+                    </div>
+                </div>
+                    
+            </div>
+        </section>{/* //Reviews - Logos*/}
+        
+        
+        {/* Screenshots #################### */}
+        
+        <section id="screenshots" className="subsection">
+            <div className="container">
+                <div className="row">
+                    <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 align-center">
+                        <div className="intro content_anim25 animated fadeInUp">
+                            <h3>Screenshots time!</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <section className="section">
-            <div className="container">
-                <div className="row call-to-action">
-
-                        <div className="col-lg-1">
-                             <span className="icon icon-envelope"></span>
+            
+            <div className="content_anim26 animated fadeInUp" id="screenshots_gallery">
+                <div className="owl-carousel-screenshots owl-carousel owl-theme" style={{opacity: 1, display: 'block'}}>
+                    <div className="owl-wrapper-outer">
+                        <div className="owl-wrapper" style={{width: 4632, left: 0, display: 'block', transition: 'all 800ms ease'}}>
+                            <div className="owl-item" style={{width: 193}}>
+                                <div>
+                                    <a>
+                                        <img src={require('./images/screenshots/1.jpg')} className="shadow" alt=""/>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="owl-item" style={{width: 193}}>
+                                <div>
+                                    <a>
+                                        <img src={require('./images/screenshots/2.jpg')} className="shadow" alt=""/>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="owl-item" style={{width: 193}}>
+                                <div>
+                                    <a>
+                                        <img src={require('./images/screenshots/3.jpg')} className="shadow" alt=""/>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="owl-item" style={{width: 193}}>
+                                <div>
+                                    <a>
+                                        <img src={require('./images/screenshots/4.jpg')} className="shadow" alt=""/>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="owl-item" style={{width: 193}}>
+                                <div>
+                                    <a>
+                                        <img src={require('./images/screenshots/5.jpg')} className="shadow" alt=""/>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="owl-item" style={{width: 193}}>
+                                <div>
+                                    <a>
+                                        <img src={require('./images/screenshots/6.jpg')} className="shadow" alt=""/>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="owl-item" style={{width: 193}}>
+                                <div>
+                                    <a>
+                                        <img src={require('./images/screenshots/7.jpg')} className="shadow" alt=""/>
+                                    </a>
+                                </div>
+                            </div>
+                            
                         </div>
-                        <div className="col-lg-9">
+                    </div>
+                    
+                <div className="owl-controls clickable"><div className="owl-pagination"><div className="owl-page"><span className=""></span></div><div className="owl-page active"><span className=""></span></div></div></div></div>
+            </div>
+            
+        </section>{/* //Screenshots*/}
+        
+        
+        {/* Newsletter #################### */}
+        
+        <section id="newsletter" className="subsection_parallax" data-stellar-background-ratio="0.6" style={{backgroundPosition: '0px 0px'}}>
+            <div className="container">
+                <div className="row">
+                    <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 align-center content_anim27 animated fadeInUp">
+                        <div className="intro">
+                            <h3>Sign up to Our newsletter</h3>
+                            <p>Lorem ipsumpapers dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div className="row">
+                    <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 align-center content_anim28 animated fadeInUp">
+
+                    {/* Newsletter Form */}
+                    <div className="newsletter_form">
+                        <form action="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/php/send.php" method="post" id="subscribe-form" _lpchecked="1">
+                        <div className="input-field">
+                            <div data-icon="" className="prefix"></div>
+                            <input id="email" onChange={(e)=> this.setState({newsletterEmail: e.target.value})} type="email" name="email" className="validate"/>
+                            <label className="">{ this.state.newsletterEmail ? '' : 'Email address'}</label>   
+                        </div>
+                        <button className="btn waves-effect waves-light subscribe-submit" type="submit" name="action" id="subscribe-form-submit">Subscribe Now</button>
+                        </form>
+                        <div id="preview"></div>
+                    </div>
+                    {/* //Newsletter form */}
+
+                    </div>
+                </div>
+                    
+            </div>
+        </section>{/* //Newsletter*/}
+        
+        
+        <section id="contact" className="subsection">
+            <div className="container">
+                <div className="row">
+                    <div className="col-xs-12 col-sm-5 col-md-5 col-lg-5 content_anim29 animated fadeInUp">
+                    <h3>Contact Info</h3>
+                    <p>James is a responsive "under construction" page. It will fit perfectly as a placeholder for your website or landing page.</p>
+                    <p>It comes with several content and background variants. James is also equiped with some cool devices mockups for app version.</p>
+                    
+                    <ul className="icon_list">
+                        <li><div data-icon="" className="icon_small float-left"></div><h6>1234 Street Name, City Name,<br/>United States</h6></li>
+                        <li><div data-icon="" className="icon_small float-left"></div><h6>(123) 456-7890</h6></li>
+                        <li><div data-icon="" className="icon_small float-left"></div><h6><a href="mailto:webdesign@shegy.pl">webdesign@shegy.pl</a></h6></li>
+                    </ul>
+                    
+                    <p>James has of corse well formated and commented code and comes with in depth documentation.</p>   
+                    </div>
+                    
+                    
+                    <div className="col-xs-12 col-sm-5 col-md-5 col-lg-5 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 content_anim30 animated fadeInUp">
                         <h3>Contact Us</h3>
-                        <p>If you have question which is beyond this knowledgebase Kindly contact us</p>
-                        </div>
-                    <div className="col-lg-2">
-                        <a href="#" className="btn btn-success btn-action">Write to Us Now</a>
-                        </div>
+                        <p>Contact Us using contact form below. Form is fully working and very easy to customise. </p>
+                    
+                    
+                        {/* Contact Form */}
+                        <form>
+                            <div className="contact_form">
+                                <div className="input-field">
+                                    <input id="first_name" onChange={(e)=> this.setState({name: e.target.value})} type="email" name="contact-name"/>
+                                    <label className="">{this.state.name ? '' : 'Your Name'}</label>
+                                </div>
+                                <div className="input-field">
+                                    <input id="contact_email" type="email" name="contact-email" onChange={(e)=> this.setState({email: e.target.value})} />
+                                    <label className="">{this.state.email ? '' : 'Email Address'}</label>
+                                </div>
+                                <div className="input-field">
+                                    <textarea className="materialize-textarea" onChange={(e)=> this.setState({message: e.target.value})} name="contact-message"></textarea>
+                                    <label className="">{this.state.message ? '' : 'Message'}</label>
+                                </div>
+                            </div>  
+                            <button className="btn waves-effect waves-light" type="submit" name="action">Send</button>
+                        </form>
+                        {/* //Contact Form */}
+                    
+                    
+                        <div id="message"><div id="alert"></div></div>{/* Message container */} 
+                    </div>
+                    
+                    
 
-                </div>
+                </div>              
             </div>
-        </section>
-
-        <footer>
+        </section>{/* //More info */}
+        
+        
+        <section id="footer" className="subsection">
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-2 col-md-3 col-sm-3">
-                        <a href="#" className="brand">
-                            <img src="assets/images/logo2.png" alt="Knowledge" />
-                            <span className="circle"></span>
-                        </a>
-                    </div>
-                    <div className="col-lg-7 col-md-5 col-sm-9">
-                        <ul className="footer-links">
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Community</a></li>
-                            <li><a href="login.html">Login</a></li>
-                        </ul>
-                    </div>
-                    <div className="col-lg-3 col-md-4 col-sm-12">
-                        <div className="copyright">
-                            <p>© 2016 knowledge Copyrights</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+                    <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 align-center">
+                    
+                        {/* Social Icons */}
+                        <div className="social_icons_container align-center">
+                            <div className="social_icons">
+                                <ul>
+                                    <li><div data-icon="" className="social_icon twitter_icon" ></div></li>
+                                    <li><div data-icon="" className="social_icon facebook_icon" ></div></li>
+                                    <li><div data-icon="" className="social_icon linkdin_icon" ></div></li>
+                                    <li><div data-icon="" className="social_icon dribbble_icon"></div></li>
+                                </ul>
+                            </div>
+                        </div>  
+                        {/* //Social Icons */}
 
-      </div>
+                    <p><small>Copyright © 2015 James, Made with ❤ by Mat Przegietka</small></p> 
+                    </div>
+                </div>              
+            </div>
+        </section>{/* //More info */}
+    </div>{/* //preloader */}
+    </div>
     );
   }
 }
