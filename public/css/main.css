@@ -31,10 +31,7 @@ Author:         Mat Przegietka
 /*--------------------------------------*/
 /* 1. Helper Classes -------------------*/
 /*--------------------------------------*/
-input:focus:not([read-only]) {
-	border-bottom: none!important;
-	box-shadow: none!important;	
-} 
+
 .align-center {text-align:center}
 .aligh-left {text-align:left}
 .align-right {text-align:right}
@@ -387,13 +384,11 @@ input:focus:not([read-only]) {
 
 .navigation_desktop a:hover {
 	opacity:1;
-	color: white;
 }
 
 .navigation_desktop li a:focus, .navigation_desktop a:hover {
 	outline:none;
 	text-decoration: none;
-	color: white;
 }
 .navigation_desktop ul li:nth-last-child(2)
 .navigation_desktop ul li:last-child {
@@ -701,7 +696,7 @@ html {
 }
 
 #maximage_video{
-	background:url('./video/video.jpg') no-repeat 0 0; 
+	background:url('../video/video.jpg') no-repeat 0 0; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -825,7 +820,7 @@ video, object {
 
 .play { 
 	text-align:center;
-	background: url(./images/mockups/subsection_mockups/3.png) center no-repeat;
+	background: url(../images/mockups/subsection_mockups/3.png) center no-repeat;
 	background-size: 70%;
 	margin-bottom:2rem;
 }
@@ -879,7 +874,7 @@ iframe {border:none;}
 }
 
 #reviews {
-	background: url(./images/reviews_background.jpg) repeat-y 0 0  fixed; 
+	background: url(../images/reviews_background.jpg) repeat-y 0 0  fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -906,7 +901,7 @@ iframe {border:none;}
 }
 
 #newsletter {
-	background: url(./images/newsletter_background.jpg) repeat-y 0 0  fixed; 
+	background: url(../images/newsletter_background.jpg) repeat-y 0 0  fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -1336,8 +1331,7 @@ textarea {
 	font-size: 14px;
 	text-align: center;
 	text-decoration: none;
-	z-index: 1;
-	color: white; 
+	z-index: 1; 
 }
 
 .waves-button-input {
