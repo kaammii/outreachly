@@ -14,6 +14,7 @@ class App extends Component {
 		message: '',
 		newsletterEmail: '',
 		change: 0,
+		searchTerm: ''
 	}
   }
   handleChange = () => {
@@ -21,6 +22,15 @@ class App extends Component {
 	this.setState({
 		change: 1
 	});
+  }
+  handleSearch = () =>{
+	  let { searchTerm } = this.state;
+	  if(searchTerm) {
+		  this.props.history.push({
+			pathname: '/search',
+			search: '?query='+searchTerm
+		  })
+	  }
   }
   render() {
 	var slider ={
@@ -84,9 +94,9 @@ class App extends Component {
 							{/* <div><RaisedButton primary={true} label={'Sign up'} /></div>
 							<a><small>Not sure? Learn more.</small></a> */}
 							<SearchBar 
-								onChange={() => console.log('onChange')}
+								onChange={(val) => this.setState({searchTerm: val})}
 								style={{backgroundColor: 'white', margin: '0 auto', maxWidth: 800}} 
-								onRequestSearch={() => console.log('onRequestSearch')}
+								onRequestSearch={this.handleSearch}
 							/>
 						</div>
 						{/* //CTA Buttons*/}

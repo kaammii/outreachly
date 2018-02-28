@@ -44,6 +44,7 @@ export default class Searched extends Component {
     constructor(props){
         super(props);
         this.state = {
+            searchedTerm: '',
             data: [{
                 title: 'Perry Marshall',
                 img: 'http://www.material-ui.com/images/ok-128.jpg',
@@ -123,6 +124,12 @@ export default class Searched extends Component {
         ]
         }
     }
+    componentWillMount(){
+        let searchedTerm = this.props.location.search.split('=')[1].split('%20')+"";
+        this.setState({
+            searchedTerm: searchedTerm
+        })
+    }
     render() {
         return (
             <div>
@@ -163,6 +170,7 @@ export default class Searched extends Component {
                                 {/* <div><RaisedButton primary={true} label={'Sign up'} /></div>
                                 <a><small>Not sure? Learn more.</small></a> */}
                                 <SearchBar 
+                                    value={this.state.searchedTerm}
                                     onChange={() => console.log('onChange')}
                                     style={{backgroundColor: 'white', margin: '0 auto', maxWidth: 800}} 
                                     onRequestSearch={() => console.log('onRequestSearch')}
@@ -253,7 +261,6 @@ export default class Searched extends Component {
                                     </CardActions>
                                 </Card>
                                 )}
-                                
                             </List>
                         </div>
                         </Tab>
