@@ -10,6 +10,9 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import {grey400, darkBlack, lightBlack} from 'material-ui/styles/colors';
 import ContentInbox from 'material-ui/svg-icons/content/inbox';
 import ActionGrade from 'material-ui/svg-icons/action/grade';
+import Results from './influencers.json';
+import Badge from 'material-ui/Badge';
+import Person from 'material-ui/svg-icons/social/person';
 
 const styles = {
     headline: {
@@ -20,26 +23,6 @@ const styles = {
     },
   };
   
-  const iconButtonElement = (
-    <IconButton
-      touch={true}
-      tooltip="more"
-      tooltipPosition="bottom-left"
-    >
-      <MoreVertIcon color={grey400} />
-    </IconButton>
-  );
-  
-  const rightIconMenu = (
-    <IconMenu iconButtonElement={iconButtonElement}>
-      <MenuItem><ListItem primaryText="Send Email" leftIcon={<ContentInbox />} />
-    {/* <ListItem primaryText="" leftIcon={<ActionGrade />} /> */}
-    </MenuItem>
-      <MenuItem>Forward</MenuItem>
-      <MenuItem>Delete</MenuItem>
-    </IconMenu>
-  );
-
 export default class Searched extends Component {
     constructor(props){
         super(props);
@@ -125,12 +108,17 @@ export default class Searched extends Component {
         }
     }
     componentWillMount(){
+        let results = Results.results;
+        // console.log(Results.results);
         let searchedTerm = this.props.location.search.split('=')[1].split('%20')+"";
         this.setState({
-            searchedTerm: searchedTerm
+            searchedTerm: searchedTerm,
+            results: results
         })
     }
     render() {
+        let { results } = this.state;
+        console.log(results);
         return (
             <div>
                 <section className="hero_fullscreen background_single menu_bar-waypoint" data-animate-down="menu_bar-hide" data-animate-up="menu_bar-hide" style={{height: 420}}>
@@ -236,24 +224,29 @@ export default class Searched extends Component {
                     <Tab  style={{color: 'black'}} label="Journalists" >
                         <div style={{width: '70%', margin: '30px auto 20px'}} >
                             <List>
-                                {this.state.data.map((item, k)=>
+                                {results.map((item, k)=>
                                 <Card style={{marginBottom: 20}} key={k} >
                                     <CardHeader
-                                    title={item.title}
-                                    subtitle={item.website}
-                                    avatar={item.img}
+                                    title={item.name}
+                                    subtitle={item.location}
+                                    avatar={item.image}
                                     />
                                     <CardText>
-                                        {item.links.map((link, key)=>
-                                        <a href="javascript:void(0)" key={key} >
-                                            <p>
-                                                {link.description} --
-                                                <span style={{color: 'black'}}>{link.link}</span>
-                                            </p>
-                                        </a>
-                                        )}
+                                        <p>
+                                            {item.bio} --
+                                            <span style={{color: 'black'}}>{item.url}</span>
+                                        </p>                                  
                                     </CardText>
                                     <CardActions>
+                                        <Badge
+                                          badgeStyle={{color: 'white', background: 'rgb(0, 188, 212)', top: 10, right: 10}}
+                                          badgeContent={item.num_following}
+                                          primary={true}
+                                        >
+                                            <IconButton tooltip="Followers">
+                                              <Person />
+                                            </IconButton>
+                                        </Badge>
                                         <IconButton tooltip="Star" touch={true} tooltipPosition="bottom-right">
                                             <ActionGrade />
                                         </IconButton>
