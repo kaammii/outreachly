@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  BrowserRouter,
+  HashRouter,
   Route,
   Switch
 } from 'react-router-dom'
@@ -23,9 +23,9 @@ const ParentApp = () => (
 
 export const AppRoutes = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Route component={ParentApp} />
-    </BrowserRouter>
+    </HashRouter>
   )
 };
 
