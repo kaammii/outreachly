@@ -6,9 +6,9 @@ const CustomTheme = getMuiTheme({
   palette: {
     // Need to change based on requirments
     textColor: Colors.black,
-    primary2Color: '#eee',
-    primary1Color: '#eee',
-    accent1Color: Colors.black,
+    primary2Color: '#1565c0',
+    primary1Color: '#1565c0',
+    accent1Color: Colors.white,
     pickerHeaderColor: Colors.darkBlack,
   },
   appBar: {

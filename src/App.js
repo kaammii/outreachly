@@ -4,6 +4,7 @@ import './main.css';
 import homeBackground from './images/home_background_01.jpg';
 import Slider from 'react-slick';
 import SearchBar from 'material-ui-search-bar';
+import Typist from 'react-typist';
 
 class App extends Component {
   constructor(props){
@@ -42,7 +43,7 @@ class App extends Component {
 	return (
 	<div>        
 	<div className="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
-		<div className="mobile_nav_close_button"><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html" id="hideRight" className="active"><div data-icon="" className="button_icon close_icon"></div></a></div>
+		<div className="mobile_nav_close_button"><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html" id="hideRight" className="active"><div className="button_icon close_icon"></div></a></div>
 		<nav id="mobile_menu_content" className="">
 			<a href="#more_info">Overview</a>
 			<a href="#features">Features</a>
@@ -57,10 +58,8 @@ class App extends Component {
 	<div className="loaded">
 			
 		{/* Fullscreen homepage */}
-		<section className="hero_fullscreen background_single menu_bar-waypoint" data-animate-down="menu_bar-hide" data-animate-up="menu_bar-hide" style={{height: 588}}>
-		{/* This section className is where you can edit background choice (background_single, background_slider, background_video) you can also enable gradient overlay (gradient_overlay) and mockups (mockups)*/}
+		<section className="hero_fullscreen background_slider gradient_overlay menu_bar-waypoint" style={{position: 'relative'}} data-animate-down="menu_bar-hide" data-animate-up="menu_bar-hide" style={{height: 588}}>
 		
-
 			{/* Logo and navigation */}
 			<div className="container top_bar">
 				<div className="row">
@@ -68,13 +67,11 @@ class App extends Component {
 					<img src="./JAMES App Landing Page_files/logo_light.png" alt="logo" className="logo"/>
 					<nav className="navigation_desktop">
 						<ul>
-							<li className=""><a href="javascript:void(0)" className="visible-lg visible-md go_to_overview">FAQ</a></li>
-							<li className=""><a href="#features" className="visible-lg visible-md">About</a></li>
-							<li className=""><a href="#features_video" className="visible-lg visible-md">Blog</a></li>
-							<li className=""><a href="#reviews" className="visible-lg visible-md">Tour</a></li>
-							<li className=""><a href="#screenshots" className="visible-lg visible-md">Customers</a></li>
-							<li className=""><a href="#contact" className="visible-lg visible-md">Login</a></li>
-							<li><div className="mobile_nav_open_button hidden-lg hidden-md"><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html" id="showRight_1" className="active"><div data-icon="" className="button_icon close_icon"></div></a></div></li>
+							<li className=""><a href="javascript:void(0)" className="visible-lg visible-md go_to_overview" onClick={()=> this.props.history.push('/faq')} >FAQ</a></li>
+							<li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/about')} className="visible-lg visible-md">About</a></li>
+							<li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/customers')} className="visible-lg visible-md">Customers</a></li>
+							<li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/login')} className="visible-lg visible-md">Login</a></li>
+							<li><div className="mobile_nav_open_button hidden-lg hidden-md"><a href="" id="showRight_1" className="active"><div className="button_icon close_icon"></div></a></div></li>
 						</ul>
 					</nav>
 					</div>
@@ -87,7 +84,16 @@ class App extends Component {
 			<div className="container align-center" id="main_content">
 				<div className="content_container row">
 					<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-md-offset-0 col-lg-offset-0 home_content">
-						<h2 className="slogan">Attract Infuencers Build Relationships</h2>
+						
+						  <h2 className="slogan" >
+						  	<Typist>
+						  		Attract Infuencers
+						  		<Typist.Backspace count={18} delay={1500} />
+						  		Build Relationships
+						  		<Typist.Backspace count={19} delay={1500} />
+						  		Attract Infuencers Build Relationships 
+						  	</Typist>
+						  </h2>
 						
 						{/* CTA Buttons*/}
 						<div className="cta_button_area">
@@ -126,11 +132,9 @@ class App extends Component {
 			
 			
 			{/* Single Image Background */}
-			<div id="maximage_single" className="mc-cycle" style={{opacity: 1, height: 588, width: 1366}}>
-				
-			<div className="mc-image " title="" style={{backgroundImage: `url(${homeBackground})`, height: 588, width: 1366}} data-href=""></div></div>
-			{/* //Single Image Background */}
-			
+			<div id="maximage_slider" className="mc-cycle" style={{ height: 588, width: 1366}}>
+				<div className="mc-image " title="" style={{backgroundImage: `url(${homeBackground})`, height: 588, width: 1366, position: 'absolute', top: 0, left: 0, zIndex: 5, opacity: 1, backgroundColor: 'rgb(0, 0, 0)', display: 'block'}} data-href=""></div>
+			</div>
 			
 		</section>{/* //Homepage */}
 		
@@ -149,7 +153,7 @@ class App extends Component {
 						<li className="visible-lg visible-md"><a href="#screenshots">Screenshots</a></li>
 						<li className="visible-lg visible-md"><a href="#contact">Contact</a></li>
 						<li className="visible-lg visible-md last-item"><button className="btn waves-effect waves-light subscribe-submit">Purchase</button></li>
-						<li className="hidden-lg hidden-md"><div className="mobile_nav_open_button"><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html" id="showRight_2"><div data-icon="" className="button_icon close_icon"></div></a></div></li>
+						<li className="hidden-lg hidden-md"><div className="mobile_nav_open_button"><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html" id="showRight_2"><div className="button_icon close_icon"></div></a></div></li>
 					</ul>
 				</nav>
 			</div>
@@ -177,7 +181,7 @@ class App extends Component {
 				
 					<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 						<div className="iconbox content_anim3 animated fadeInUp">
-							<div data-icon="" className="iconbox_icon"></div>
+							<div className="iconbox_icon"></div>
 							<div className="iconbox_content">
 								<h5>Responsive Design</h5>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore.</p>
@@ -187,7 +191,7 @@ class App extends Component {
 					
 					<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 						<div className="iconbox content_anim4 animated fadeInUp">
-							<div data-icon="" className="iconbox_icon"></div>
+							<div className="iconbox_icon"></div>
 							<div className="iconbox_content">
 								<h5>Clean Code</h5>
 								<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -197,7 +201,7 @@ class App extends Component {
 					
 					<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 						<div className="iconbox content_anim5 animated fadeInUp">
-							<div data-icon="" className="iconbox_icon"></div>
+							<div className="iconbox_icon"></div>
 							<div className="iconbox_content">
 								<h5>1500+ Icons</h5>
 								<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -233,7 +237,7 @@ class App extends Component {
 						</div>
 						
 						<div className="iconbox content_anim7 animated fadeInUp">
-							<div data-icon="" className="iconbox_icon"></div>
+							<div className="iconbox_icon"></div>
 							<div className="iconbox_content">
 								<h5>Creative Design</h5>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore aliqua.</p>
@@ -241,7 +245,7 @@ class App extends Component {
 						</div>
 						
 						<div className="iconbox content_anim8 animated fadeInUp">
-							<div data-icon="" className="iconbox_icon"></div>
+							<div className="iconbox_icon"></div>
 							<div className="iconbox_content">
 								<h5>Cross-Browser Support</h5>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore aliqua.</p>
@@ -283,10 +287,10 @@ class App extends Component {
 					</div>
 					<div className="col-xs-12 col-sm-5 col-md-5 col-lg-5 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 						<ul className="icon_list">
-							<li className="content_anim13 animated fadeInUp"><div data-icon="" className="icon_small float-left"></div><h6>Contact &amp; Newsletter Form Included</h6></li>
-							<li className="content_anim14 animated fadeInUp"><div data-icon="" className="icon_small float-left"></div><h6>Image, Slider, Video Backgrounds</h6></li>
-							<li className="content_anim15 animated fadeInUp"><div data-icon="" className="icon_small float-left"></div><h6>Mobile App Mockups Included</h6></li>
-							<li className="content_anim16 animated fadeInUp"><div data-icon="" className="icon_small float-left"></div><h6>Easy To Customise Animations</h6></li>
+							<li className="content_anim13 animated fadeInUp"><div className="icon_small float-left"></div><h6>Contact &amp; Newsletter Form Included</h6></li>
+							<li className="content_anim14 animated fadeInUp"><div className="icon_small float-left"></div><h6>Image, Slider, Video Backgrounds</h6></li>
+							<li className="content_anim15 animated fadeInUp"><div className="icon_small float-left"></div><h6>Mobile App Mockups Included</h6></li>
+							<li className="content_anim16 animated fadeInUp"><div className="icon_small float-left"></div><h6>Easy To Customise Animations</h6></li>
 						</ul>
 					</div>
 				</div>
@@ -493,7 +497,7 @@ class App extends Component {
 					<div className="newsletter_form">
 						<form>
 						<div className="input-field">
-							<div data-icon="" className="prefix"></div>
+							<div className="prefix"></div>
 							<TextField style = {{width: '80%', fontSize: 20}} inputStyle={{color:"white"}} floatingLabelStyle={{color: 'white', fontSize: '20px'}} floatingLabelText={'Email Address'} />
 						</div>
 						<button className="btn waves-effect waves-light subscribe-submit" type="submit" name="action" id="subscribe-form-submit">Subscribe Now</button>
@@ -518,9 +522,9 @@ class App extends Component {
 					<p>It comes with several content and background variants. James is also equiped with some cool devices mockups for app version.</p>
 					
 					<ul className="icon_list">
-						<li><div data-icon="" className="icon_small float-left"></div><h6>1234 Street Name, City Name,<br/>United States</h6></li>
-						<li><div data-icon="" className="icon_small float-left"></div><h6>(123) 456-7890</h6></li>
-						<li><div data-icon="" className="icon_small float-left"></div><h6><a href="mailto:webdesign@shegy.pl">webdesign@shegy.pl</a></h6></li>
+						<li><div className="icon_small float-left"></div><h6>1234 Street Name, City Name,<br/>United States</h6></li>
+						<li><div className="icon_small float-left"></div><h6>(123) 456-7890</h6></li>
+						<li><div className="icon_small float-left"></div><h6><a href="mailto:webdesign@shegy.pl">webdesign@shegy.pl</a></h6></li>
 					</ul>
 					
 					<p>James has of corse well formated and commented code and comes with in depth documentation.</p>   
@@ -572,10 +576,10 @@ class App extends Component {
 						<div className="social_icons_container align-center">
 							<div className="social_icons">
 								<ul>
-									<li><div data-icon="" className="social_icon twitter_icon" ></div></li>
-									<li><div data-icon="" className="social_icon facebook_icon" ></div></li>
-									<li><div data-icon="" className="social_icon linkdin_icon" ></div></li>
-									<li><div data-icon="" className="social_icon dribbble_icon"></div></li>
+									<li><div className="social_icon twitter_icon" ></div></li>
+									<li><div className="social_icon facebook_icon" ></div></li>
+									<li><div className="social_icon linkdin_icon" ></div></li>
+									<li><div className="social_icon dribbble_icon"></div></li>
 								</ul>
 							</div>
 						</div>  

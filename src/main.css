@@ -31,6 +31,21 @@ Author:         Mat Przegietka
 /*--------------------------------------*/
 /* 1. Helper Classes -------------------*/
 /*--------------------------------------*/
+.cards {
+	width: 70%;
+	margin: 30px auto 20px;
+}
+/*@media only screen and (max-device-width: 768px){
+	.cards {
+		width: 100%;
+	}
+}*/
+@media only screen and (max-device-width: 768px){
+	.cards {
+		width: 100%;
+	}
+}
+
 input:focus:not([read-only]) {
 	border-bottom: none!important;
 	box-shadow: none!important;	

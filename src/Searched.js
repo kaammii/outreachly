@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import homeBackground from './images/home_background_01.jpg';
+import logoLight from './images/logo_light.png';
 import SearchBar from 'material-ui-search-bar';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import {List, ListItem} from 'material-ui/List';
@@ -13,6 +14,7 @@ import ActionGrade from 'material-ui/svg-icons/action/grade';
 import Results from './influencers.json';
 import Badge from 'material-ui/Badge';
 import Person from 'material-ui/svg-icons/social/person';
+import Typist from 'react-typist';
 
 const styles = {
     headline: {
@@ -121,182 +123,188 @@ export default class Searched extends Component {
         console.log(results);
         return (
             <div>
-                <section className="hero_fullscreen background_single menu_bar-waypoint" data-animate-down="menu_bar-hide" data-animate-up="menu_bar-hide" style={{height: 420}}>
-                {/* This section className is where you can edit background choice (background_single, background_slider, background_video) you can also enable gradient overlay (gradient_overlay) and mockups (mockups)*/}
-            
+                <section className="hero_fullscreen background_slider gradient_overlay menu_bar-waypoint" data-animate-down="menu_bar-hide" data-animate-up="menu_bar-hide" style={{height: 420}}>
+                    {/* This section className is where you can edit background choice (background_single, background_slider, background_video) you can also enable gradient overlay (gradient_overlay) and mockups (mockups)*/}
+                
 
-                {/* Logo and navigation */}
-                <div className="container top_bar">
-                    <div className="row">
-                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <img src="./JAMES App Landing Page_files/logo_light.png" alt="logo" className="logo"/>
-                        <nav className="navigation_desktop">
-                            <ul>
-                                <li className=""><a href="javascript:void(0)" className="visible-lg visible-md go_to_overview">FAQ</a></li>
-                                <li className=""><a href="#features" className="visible-lg visible-md">About</a></li>
-                                <li className=""><a href="#features_video" className="visible-lg visible-md">Blog</a></li>
-                                <li className=""><a href="#reviews" className="visible-lg visible-md">Tour</a></li>
-                                <li className=""><a href="#screenshots" className="visible-lg visible-md">Customers</a></li>
-                                <li className=""><a href="#contact" className="visible-lg visible-md">Login</a></li>
-                                <li><div className="mobile_nav_open_button hidden-lg hidden-md"><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html" id="showRight_1" className="active"><div data-icon="" className="button_icon close_icon"></div></a></div></li>
-                            </ul>
-                        </nav>
+                    {/* Logo and navigation */}
+                    <div className="container top_bar">
+                        <div className="row">
+                            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <img src="./JAMES App Landing Page_files/logo_light.png" alt="logo" className="logo"/>
+                            <nav className="navigation_desktop">
+                                <ul>
+                                    <li className=""><a href="javascript:void(0)" className="visible-lg visible-md go_to_overview" onClick={()=> this.props.history.push('/faq')} >FAQ</a></li>
+                                    <li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/about')} className="visible-lg visible-md">About</a></li>
+                                    <li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/customers')} className="visible-lg visible-md">Customers</a></li>
+                                    <li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/login')} className="visible-lg visible-md">Login</a></li>
+                                    <li><div className="mobile_nav_open_button hidden-lg hidden-md"><a href="" id="showRight_1" className="active"><div className="button_icon close_icon"></div></a></div></li>
+                                </ul>
+                            </nav>
+                            </div>
                         </div>
                     </div>
-                </div>
-                {/* //Logo and navigation */}
+                    {/* //Logo and navigation */}
 
 
-                {/* Main content */}
-                <div className="container align-center" id="main_content">
-                    <div className="content_container row">
-                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-md-offset-0 col-lg-offset-0 home_content">
-                            <h2 className="slogan">Attract Infuencers Build Relationships</h2>
-                            
-                            {/* CTA Buttons*/}
-                            <div className="cta_button_area">
-                                {/* <div><RaisedButton primary={true} label={'Sign up'} /></div>
-                                <a><small>Not sure? Learn more.</small></a> */}
-                                <SearchBar 
-                                    value={this.state.searchedTerm}
-                                    onChange={() => console.log('onChange')}
-                                    style={{backgroundColor: 'white', margin: '0 auto', maxWidth: 800}} 
-                                    onRequestSearch={() => console.log('onRequestSearch')}
-                                />
-                            </div>
-                            {/* //CTA Buttons*/}
-                                        
-                        </div>
-                    </div>          
-                </div>  
-                {/* //Main content */}
-                
-                
-                {/* Video Background */}
-                <div id="maximage_video">
-                    <video width="896" height="504" style={{height: 759, width: 1349, marginTop: '-85.5px', marginLeft: 0}}>
-                        <source src="video/video.mp4" type="video/mp4"/>
-                        <source src="video/video.webm" type="video/webm"/>
-                        <source src="video/video.ogv" type="video/ogg"/>
-                    </video>
-                </div>
-                {/* //Video Background */}
-                
-                
-                {/* Slider Background */}
-                {/* <div id="maximage_slider" className="mc-cycle" style="width: 1366px; height: 588px;">
-                    
-                <div className="mc-image " title="" style="background-image: url(&quot;images/background_slider_01.jpg&quot;); background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 1366px; height: 588px;" data-href=""></div><div className="mc-image " title="" style="background-image: url(&quot;images/background_slider_02.jpg&quot;); background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: none; z-index: 4; width: 1366px; height: 588px; opacity: 0;" data-href=""></div><div className="mc-image " title="" style="background-image: url(&quot;images/background_slider_03.jpg&quot;); background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: none; z-index: 4; width: 1366px; height: 588px; opacity: 0;" data-href=""></div><div className="mc-image " title="" style="background-image: url(&quot;images/background_slider_04.jpg&quot;); background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: block; z-index: 4; width: 1366px; height: 588px; opacity: 0;" data-href=""></div></div> */}
-                {/* //Slider Background */}
-                
-                
-                {/* Single Image Background */}
-                <div id="maximage_single" className="mc-cycle" style={{opacity: 1, height: 588, width: 1366}}>
-                    
-                <div className="mc-image " title="" style={{backgroundImage: `url(${homeBackground})`, height: 420, width: 1366}} data-href=""></div></div>
-                {/* //Single Image Background */}
-                
-                
-            </section>{/* //Homepage */}
-		
-		
-            {/* Menu bar */}
-            <header id="menu_bar" className="menu_bar menu_bar-hide">
-                <div className="container">
-                    <a href="" className="go_to_home logo_dark"><img src="./JAMES App Landing Page_files/logo_dark.png" alt="logo" className="logo"/></a>
-                    <a href="" className="go_to_home logo_light"><img src="./JAMES App Landing Page_files/logo_light.png" alt="logo" className="logo"/></a>
-                    <nav className="menu_bar_navigation">
-                        <ul>
-                            <li className="visible-lg visible-md"><a href="#more_info" className="go_to_overview">Overview</a></li>
-                            <li className="visible-lg visible-md"><a href="#features">Features</a></li>
-                            <li className="visible-lg visible-md"><a href="#features_video">Video</a></li>
-                            <li className="visible-lg visible-md"><a href="#reviews">Reviews</a></li>
-                            <li className="visible-lg visible-md"><a href="#screenshots">Screenshots</a></li>
-                            <li className="visible-lg visible-md"><a href="#contact">Contact</a></li>
-                            <li className="visible-lg visible-md last-item"><button className="btn waves-effect waves-light subscribe-submit">Purchase</button></li>
-                            <li className="hidden-lg hidden-md"><div className="mobile_nav_open_button"><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html" id="showRight_2"><div data-icon="" className="button_icon close_icon"></div></a></div></li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>{/* // Menu bar */}
-            <section className="subsection" style={{paddingTop: 0}} >
-                <Tabs >
-                    <Tab  style={{color: 'black'}} label="Journalists" >
-                        <div style={{width: '70%', margin: '30px auto 20px'}} >
-                            <List>
-                                {results.map((item, k)=>
-                                <Card style={{marginBottom: 20}} key={k} >
-                                    <CardHeader
-                                    title={item.name}
-                                    subtitle={item.location}
-                                    avatar={item.image}
+                    {/* Main content */}
+                    <div className="container align-center" id="main_content">
+                        <div className="content_container row">
+                            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-md-offset-0 col-lg-offset-0 home_content">
+                                <h2 className="slogan">
+                                    <Typist>
+                                        Attract Infuencers
+                                        <Typist.Backspace count={18} delay={1500} />
+                                        Build Relationships
+                                        <Typist.Backspace count={19} delay={1500} />
+                                        Attract Infuencers Build Relationships 
+                                    </Typist>
+                                </h2>
+                                
+                                {/* CTA Buttons*/}
+                                <div className="cta_button_area">
+                                    {/* <div><RaisedButton primary={true} label={'Sign up'} /></div>
+                                    <a><small>Not sure? Learn more.</small></a> */}
+                                    <SearchBar 
+                                        value={this.state.searchedTerm}
+                                        onChange={() => console.log('onChange')}
+                                        style={{backgroundColor: 'white', margin: '0 auto', maxWidth: 800}} 
+                                        onRequestSearch={() => console.log('onRequestSearch')}
                                     />
-                                    <CardText>
-                                        <p>
-                                            {item.bio} --
-                                            <span style={{color: 'black'}}>{item.url}</span>
-                                        </p>                                  
-                                    </CardText>
-                                    <CardActions>
-                                        <Badge
-                                          badgeStyle={{color: 'white', background: 'rgb(0, 188, 212)', top: 10, right: 10}}
-                                          badgeContent={item.num_following}
-                                          primary={true}
-                                        >
-                                            <IconButton tooltip="Followers">
-                                              <Person />
-                                            </IconButton>
-                                        </Badge>
-                                        <IconButton tooltip="Star" touch={true} tooltipPosition="bottom-right">
-                                            <ActionGrade />
-                                        </IconButton>
-                                        <FlatButton label="Send Email" />
-                                    </CardActions>
-                                </Card>
-                                )}
-                            </List>
-                        </div>
-                        </Tab>
-                        <Tab label="Press Opportunities"  style={{color: 'black'}} >
-                            {this.state.data.map((item, k)=>
-                            <div style={{width: '70%', margin: '30px auto 20px'}} key={k} >
-                                <ListItem
-                                    leftAvatar={<Avatar src={item.img} />}
-                                    style={{marginTop: 20}}
-                                    primaryText={item.title}
-                                    rightIconButton={ 
-                                        <div style={{ display: 'flex', justifyContent: 'space-between'}} >
-                                            {/* <RaisedButton label="*" /> */}
-                                            <RaisedButton label="Send Email" primary={true} />
-                                        </div>
-                                    }
-                                    secondaryText={item.links.map((link, key)=>
-                                        <p key={key} >
-                                            <span style={{color: 'black'}}>{link.link}</span> --
-                                            I&apos;{link.description}
-                                        </p>
-                                    )}
-                                    secondaryTextLines={2}
-                                    />
-                                    <Divider inset={true} />
+                                </div>
+                                {/* //CTA Buttons*/}
+                                            
                             </div>
-                            )}
-                        </Tab>
-                        <Tab
-                        style={{color: 'black'}}
-                        label="Quora & Reddut results"
-                        data-route="/home"
+                        </div>          
+                    </div>  
+                    {/* //Main content */}
+                    
+                    
+                    {/* Video Background */}
+                    <div id="maximage_video">
+                        <video width="896" height="504" style={{height: 759, width: 1349, marginTop: '-85.5px', marginLeft: 0}}>
+                            <source src="video/video.mp4" type="video/mp4"/>
+                            <source src="video/video.webm" type="video/webm"/>
+                            <source src="video/video.ogv" type="video/ogg"/>
+                        </video>
+                    </div>
+                    {/* //Video Background */}
+                    
+                    
+                    {/* Slider Background */}
+                    {/* <div id="maximage_slider" className="mc-cycle" style="width: 1366px; height: 588px;">
                         
-                        >
-                        <div>
-                            <h2 style={styles.headline}>Tab Three</h2>
-                            <p>
-                            This is a third example tab.
-                            </p>
-                        </div>
-                    </Tab>
-                </Tabs>
-            </section>
+                    <div className="mc-image " title="" style="background-image: url(&quot;images/background_slider_01.jpg&quot;); background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: block; z-index: 5; opacity: 1; width: 1366px; height: 588px;" data-href=""></div><div className="mc-image " title="" style="background-image: url(&quot;images/background_slider_02.jpg&quot;); background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: none; z-index: 4; width: 1366px; height: 588px; opacity: 0;" data-href=""></div><div className="mc-image " title="" style="background-image: url(&quot;images/background_slider_03.jpg&quot;); background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: none; z-index: 4; width: 1366px; height: 588px; opacity: 0;" data-href=""></div><div className="mc-image " title="" style="background-image: url(&quot;images/background_slider_04.jpg&quot;); background-color: rgb(0, 0, 0); position: absolute; top: 0px; left: 0px; display: block; z-index: 4; width: 1366px; height: 588px; opacity: 0;" data-href=""></div></div> */}
+                    {/* //Slider Background */}
+                    
+                    
+                    {/* Single Image Background */}
+                    <div id="maximage_single" className="mc-cycle" style={{opacity: 1, height: 588, width: 1366}}>
+                        
+                    <div className="mc-image " title="" style={{backgroundImage: `url(${homeBackground})`, height: 420, width: 1366}} data-href=""></div></div>
+                    {/* //Single Image Background */}
+                </section>{/* //Homepage */}
+		
+		
+                {/* Menu bar */}
+                <header id="menu_bar" className="menu_bar menu_bar-hide">
+                    <div className="container">
+                        <a href="" className="go_to_home logo_dark"><img src={require('./images/logo_light.png')} alt="logo" className="logo"/></a>
+                        <a href="" className="go_to_home logo_light"><img src={require('./images/logo_light.png')} alt="logo" className="logo"/></a>
+                        <nav className="menu_bar_navigation">
+                            <ul>
+                                <li className="visible-lg visible-md"><a href="#more_info" className="go_to_overview">Overview</a></li>
+                                <li className="visible-lg visible-md"><a href="#features">Features</a></li>
+                                <li className="visible-lg visible-md"><a href="#features_video">Video</a></li>
+                                <li className="visible-lg visible-md"><a href="#reviews">Reviews</a></li>
+                                <li className="visible-lg visible-md"><a href="#screenshots">Screenshots</a></li>
+                                <li className="visible-lg visible-md"><a href="#contact">Contact</a></li>
+                                <li className="visible-lg visible-md last-item"><button className="btn waves-effect waves-light subscribe-submit">Purchase</button></li>
+                                <li className="hidden-lg hidden-md"><div className="mobile_nav_open_button"><a href="http://www.shegy.nazwa.pl/themeforest/JamesLP/app/html/index1.html" id="showRight_2"><div data-icon="" className="button_icon close_icon"></div></a></div></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>{/* // Menu bar */}
+                <section className="subsection" style={{paddingTop: 0}} >
+                    <div>
+                    <Tabs style={{color: 'white'}} >
+                        <Tab   label="Journalists" >
+                            <div className="cards">
+                                <List>
+                                    {results.map((item, k)=>
+                                    <Card style={{marginBottom: 20}} key={k} >
+                                        <CardHeader
+                                        title={item.name}
+                                        subtitle={item.location}
+                                        avatar={item.image}
+                                        />
+                                        <CardText>
+                                            <p>
+                                                {item.bio} --
+                                                <span style={{color: 'black'}}>{item.url}</span>
+                                            </p>                                  
+                                        </CardText>
+                                        <CardActions>
+                                            <Badge
+                                              badgeStyle={{color: 'white', background: 'rgb(0, 188, 212)', top: 10, right: 10}}
+                                              badgeContent={item.num_following}
+                                              primary={true}
+                                            >
+                                                <IconButton tooltip="Followers">
+                                                  <Person />
+                                                </IconButton>
+                                            </Badge>
+                                            <IconButton tooltip="Star" touch={true} tooltipPosition="bottom-right">
+                                                <ActionGrade />
+                                            </IconButton>
+                                            <FlatButton label="Send Email" />
+                                        </CardActions>
+                                    </Card>
+                                    )}
+                                </List>
+                            </div>
+                            </Tab>
+                            <Tab label="Press Opportunities">
+                                {this.state.data.map((item, k)=>
+                                <div style={{width: '70%', margin: '30px auto 20px'}} key={k} >
+                                    <ListItem
+                                        leftAvatar={<Avatar src={item.img} />}
+                                        style={{marginTop: 20}}
+                                        primaryText={item.title}
+                                        rightIconButton={ 
+                                            <div style={{ display: 'flex', justifyContent: 'space-between'}} >
+                                                {/* <RaisedButton label="*" /> */}
+                                                <RaisedButton label="Send Email" primary={true} />
+                                            </div>
+                                        }
+                                        secondaryText={item.links.map((link, key)=>
+                                            <p key={key} >
+                                                <span style={{color: 'black'}}>{link.link}</span> --
+                                                I&apos;{link.description}
+                                            </p>
+                                        )}
+                                        secondaryTextLines={2}
+                                        />
+                                        <Divider inset={true} />
+                                </div>
+                                )}
+                            </Tab>
+                            <Tab
+                            // style={{color: 'black'}}
+                            label="Quora & Reddut results"
+                            data-route="/home"
+                            
+                            >
+                            <div>
+                                <h2 style={styles.headline}>Tab Three</h2>
+                                <p>
+                                This is a third example tab.
+                                </p>
+                            </div>
+                        </Tab>
+                    </Tabs>
+                    </div>
+                </section>
         </div>
         );
     }

@@ -1,13 +1,16 @@
 import React from 'react'
 import {
-  HashRouter,
+  BrowserRouter,
   Route,
   Switch
 } from 'react-router-dom'
 
 import App from './App';
 import Searched from './Searched';
-        
+import Faq from './Faq';
+import Login from './Login';
+import About from './About';
+import Customers from './Customers';
 const ParentApp = () => (
   <div>
 
@@ -15,6 +18,10 @@ const ParentApp = () => (
 
     <Route exact path="/" component={App} />
     <Route path="/search" component={Searched} />
+    <Route path="/faq" component={Faq} />
+    <Route path="/login" component={Login} />
+    <Route path="/about" component={About} />
+    <Route path="/customers" component={Customers} />
     {/* <Route path="/signup" component={SignUp} /> */}
      {/* <Route path="/dashboard" component={Dashboard} /> */}
 	  {/*<Route path='/dashboardClient/:firstid/:secondid' component={DashboardClient} /> */}
@@ -23,9 +30,9 @@ const ParentApp = () => (
 
 export const AppRoutes = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Route component={ParentApp} />
-    </HashRouter>
+    </BrowserRouter>
   )
 };
 
