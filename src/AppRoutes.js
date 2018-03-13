@@ -11,6 +11,8 @@ import Faq from './Faq';
 import Login from './Login';
 import About from './About';
 import Customers from './Customers';
+import NewPitch from './NewPitch';
+
 const ParentApp = () => (
   <div>
 
@@ -22,6 +24,7 @@ const ParentApp = () => (
     <Route path="/login" component={Login} />
     <Route path="/about" component={About} />
     <Route path="/customers" component={Customers} />
+    <Route path="/newpitch" component={NewPitch} />
     {/* <Route path="/signup" component={SignUp} /> */}
      {/* <Route path="/dashboard" component={Dashboard} /> */}
 	  {/*<Route path='/dashboardClient/:firstid/:secondid' component={DashboardClient} /> */}
