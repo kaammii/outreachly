@@ -225,7 +225,7 @@ export default class Searched extends Component {
                         </nav>
                     </div>
                 </header>{/* // Menu bar */}
-                <section className="subsection" style={{paddingTop: 0}} >
+                <section className="subsection" style={{paddingTop: 0, background: '#EEEEEE'}}>
                     <div>
                     <Tabs style={{color: 'white'}} >
                         <Tab   label="Journalists" >
