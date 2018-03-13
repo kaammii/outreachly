@@ -54,7 +54,7 @@ class Faq extends Component {
                     <div className="mc-image " title="" style={{backgroundImage: `url(${homeBackground})`, height: 420, width: 1366}} data-href=""></div></div>
                     {/* //Single Image Background */}
                 </section>{/* //Homepage */}
-                <section className="subsection" style={{paddingTop: 0}} >
+                <section className="subsection" style={{paddingTop: 1, background: '#EEEEE'}} >
 	                <div style={{width: '70%', margin: '30px auto 20px'}} >
 	                	<Card style={{marginBottom: 20}} >
 						    <CardHeader
