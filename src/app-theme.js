@@ -19,6 +19,10 @@ const CustomTheme = getMuiTheme({
     primaryColor: '#2196f3',
     primaryTextColor: Colors.white
   },
+  flatButton: {
+    primaryColor: Colors.white
+    // primaryTextColor: Colors.white
+  },
   textField: {
     focusColor: '#2196f3',
     textColor: Colors.black
