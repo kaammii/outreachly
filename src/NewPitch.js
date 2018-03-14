@@ -158,7 +158,7 @@ sonny@copybreak.io`
 										<CardHeader title="The Biggest Mistake Digital Marketers Ever Made: Claiming to Measure Everything"/>
 									</div>
 									<div className="col-md-3" style={{marginTop: 10, display: 'flex', justifyContent: 'center'}} >
-										<FlatButton label="Original article" />
+										<FlatButton primary={true} label="Original article" />
 									</div>
 								</div>
 						    </Card>
