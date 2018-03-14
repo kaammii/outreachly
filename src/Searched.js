@@ -6,7 +6,7 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Avatar from 'material-ui/Avatar';
-import {RaisedButton, IconMenu, MenuItem, IconButton, Card, CardHeader, CardActions, FlatButton, CardText } from 'material-ui';
+import {RaisedButton, IconMenu, MenuItem, IconButton, Card, CardHeader, CardActions, FlatButton , CardText } from 'material-ui';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import {grey400, darkBlack, lightBlack} from 'material-ui/styles/colors';
 import ContentInbox from 'material-ui/svg-icons/content/inbox';
@@ -257,7 +257,7 @@ export default class Searched extends Component {
                                             <IconButton tooltip="Star" touch={true} tooltipPosition="bottom-right">
                                                 <ActionGrade />
                                             </IconButton>
-                                            <FlatButton label="Send Email" />
+                                            <FlatButton primary={true} label="Send Email" onClick={()=>this.props.history.push('/newpitch')} />
                                         </CardActions>
                                     </Card>
                                     )}
@@ -274,7 +274,7 @@ export default class Searched extends Component {
                                         rightIconButton={ 
                                             <div style={{ display: 'flex', justifyContent: 'space-between'}} >
                                                 {/* <RaisedButton label="*" /> */}
-                                                <RaisedButton label="Send Email" primary={true} />
+                                                <RaisedButton label="Send Email" onClick={()=>this.props.history.push('/newpitch')} primary={true} />
                                             </div>
                                         }
                                         secondaryText={item.links.map((link, key)=>
