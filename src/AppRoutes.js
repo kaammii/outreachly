@@ -12,6 +12,7 @@ import Login from './Login';
 import About from './About';
 import Customers from './Customers';
 import NewPitch from './NewPitch';
+import Favorites from './Favorites';
 
 const ParentApp = () => (
   <div>
@@ -25,6 +26,7 @@ const ParentApp = () => (
     <Route path="/about" component={About} />
     <Route path="/customers" component={Customers} />
     <Route path="/newpitch" component={NewPitch} />
+    <Route path="/favorites" component={Favorites} />
     {/* <Route path="/signup" component={SignUp} /> */}
      {/* <Route path="/dashboard" component={Dashboard} /> */}
 	  {/*<Route path='/dashboardClient/:firstid/:secondid' component={DashboardClient} /> */}
