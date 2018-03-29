@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import homeBackground from './images/home_background_01.jpg';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
-
+import Nav from './Nav';
 class Faq extends Component {
     constructor(props) {
         super(props);
@@ -21,18 +21,7 @@ class Faq extends Component {
 						<div className="row">
 							<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<img src="./JAMES App Landing Page_files/logo_light.png" alt="logo" className="logo"/>
-							<nav className="navigation_desktop">
-								<ul>
-									<li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/emails')} className="visible-lg visible-md">Emails</a></li>
-									<li className=""><a href="javascript:void(0)" className="visible-lg visible-md go_to_overview" onClick={()=> this.props.history.push('/faq')} >FAQ</a></li>
-									<li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/about')} className="visible-lg visible-md">About</a></li>
-									<li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/customers')} className="visible-lg visible-md">Customers</a></li>
-									<li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/favorites')} className="visible-lg visible-md">Favorites</a></li>
-									<li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/login')} className="visible-lg visible-md">Login</a></li>
-									
-									<li><div className="mobile_nav_open_button hidden-lg hidden-md"><a href="" id="showRight_1" className="active"><div className="button_icon close_icon"></div></a></div></li>
-								</ul>
-							</nav>
+							<Nav {...this.props} />
 							</div>
 						</div>
 					</div>

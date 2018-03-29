@@ -15,6 +15,7 @@ import Results from './influencers.json';
 import Badge from 'material-ui/Badge';
 import Person from 'material-ui/svg-icons/social/person';
 import Typist from 'react-typist';
+import Nav from './Nav';
 
 const styles = {
     headline: {
@@ -30,83 +31,83 @@ export default class Searched extends Component {
         super(props);
         this.state = {
             searchedTerm: '',
-            data: [{
-                title: 'Perry Marshall',
-                img: 'http://www.material-ui.com/images/ok-128.jpg',
-                website: 'entrepreneur.com',
-                links: [
-                    {
-                        description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
-                        link: 'www.reddit.com'
-                    },
-                    {
-                        description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
-                        link: 'www.reddit.com'
-                    },    
-                ]
-            },
-            {
-                title: 'Perry Marshall',
-                img: 'http://www.material-ui.com/images/ok-128.jpg',
-                website: 'entrepreneur.com',
-                links: [
-                    {
-                        description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
-                        link: 'www.reddit.com'
-                    },
-                    {
-                        description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
-                        link: 'www.reddit.com'
-                    },    
-                ]
-            },
-            {
-                title: 'Perry Marshall',
-                img: 'http://www.material-ui.com/images/ok-128.jpg',
-                website: 'entrepreneur.com',
-                links: [
-                    {
-                        description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
-                        link: 'www.reddit.com'
-                    },
-                    {
-                        description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
-                        link: 'www.reddit.com'
-                    },   
-                ]
-            },
-            {
-                title: 'Perry Marshall',
-                img: 'http://www.material-ui.com/images/ok-128.jpg',
-                website: 'entrepreneur.com',
-                links: [
-                    {
-                        description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
-                        link: 'www.reddit.com'
-                    },
-                    {
-                        description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
-                        link: 'www.reddit.com'
-                    },  
-                ]
-            },
-            {
-                title: 'Perry Marshall',
-                img: 'http://www.material-ui.com/images/ok-128.jpg',
-                website: 'entrepreneur.com',
-                links: [
-                    {
-                        description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
-                        link: 'www.reddit.com'
-                    },
-                    {
-                        description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
-                        link: 'www.reddit.com'
-                    },    
-                ]
-            },
-            
-        ]
+            data: [
+                {
+                    title: 'Perry Marshall',
+                    img: 'http://www.material-ui.com/images/ok-128.jpg',
+                    website: 'entrepreneur.com',
+                    links: [
+                        {
+                            description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
+                            link: 'www.reddit.com'
+                        },
+                        {
+                            description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
+                            link: 'www.reddit.com'
+                        },    
+                    ]
+                },
+                {
+                    title: 'Perry Marshall',
+                    img: 'http://www.material-ui.com/images/ok-128.jpg',
+                    website: 'entrepreneur.com',
+                    links: [
+                        {
+                            description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
+                            link: 'www.reddit.com'
+                        },
+                        {
+                            description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
+                            link: 'www.reddit.com'
+                        },    
+                    ]
+                },
+                {
+                    title: 'Perry Marshall',
+                    img: 'http://www.material-ui.com/images/ok-128.jpg',
+                    website: 'entrepreneur.com',
+                    links: [
+                        {
+                            description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
+                            link: 'www.reddit.com'
+                        },
+                        {
+                            description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
+                            link: 'www.reddit.com'
+                        },   
+                    ]
+                },
+                {
+                    title: 'Perry Marshall',
+                    img: 'http://www.material-ui.com/images/ok-128.jpg',
+                    website: 'entrepreneur.com',
+                    links: [
+                        {
+                            description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
+                            link: 'www.reddit.com'
+                        },
+                        {
+                            description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
+                            link: 'www.reddit.com'
+                        },  
+                    ]
+                },
+                {
+                    title: 'Perry Marshall',
+                    img: 'http://www.material-ui.com/images/ok-128.jpg',
+                    website: 'entrepreneur.com',
+                    links: [
+                        {
+                            description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
+                            link: 'www.reddit.com'
+                        },
+                        {
+                            description: 'Help with setting up a test for hiring a junior marketing content writer : marketing',
+                            link: 'www.reddit.com'
+                        },    
+                    ]
+                },
+            ]
         }
     }
     componentWillMount(){
@@ -120,7 +121,7 @@ export default class Searched extends Component {
     }
     render() {
         let { results } = this.state;
-        console.log(results);
+
         return (
             <div>
                 <section className="hero_fullscreen background_slider gradient_overlay menu_bar-waypoint" data-animate-down="menu_bar-hide" data-animate-up="menu_bar-hide" style={{height: 420}}>
@@ -131,18 +132,7 @@ export default class Searched extends Component {
                         <div className="row">
                             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <img src="./JAMES App Landing Page_files/logo_light.png" alt="logo" className="logo"/>
-                            <nav className="navigation_desktop">
-                                <ul>
-                                    <li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/emails')} className="visible-lg visible-md">Emails</a></li>
-                                    <li className=""><a href="javascript:void(0)" className="visible-lg visible-md go_to_overview" onClick={()=> this.props.history.push('/faq')} >FAQ</a></li>
-                                    <li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/about')} className="visible-lg visible-md">About</a></li>
-                                    <li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/customers')} className="visible-lg visible-md">Customers</a></li>
-                                    <li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/favorites')} className="visible-lg visible-md">Favorites</a></li>
-                                    <li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/login')} className="visible-lg visible-md">Login</a></li>
-
-                                    <li><div className="mobile_nav_open_button hidden-lg hidden-md"><a href="" id="showRight_1" className="active"><div className="button_icon close_icon"></div></a></div></li>
-                                </ul>
-                            </nav>
+                            <Nav {...this.props} />
                             </div>
                         </div>
                     </div>

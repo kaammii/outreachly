@@ -5,7 +5,7 @@ import homeBackground from './images/home_background_01.jpg';
 import Slider from 'react-slick';
 import SearchBar from 'material-ui-search-bar';
 import Typist from 'react-typist';
-
+import Nav from './Nav';
 class App extends Component {
   constructor(props){
 	super(props);
@@ -65,18 +65,7 @@ class App extends Component {
 				<div className="row">
 					<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<img src="./JAMES App Landing Page_files/logo_light.png" alt="logo" className="logo"/>
-					<nav className="navigation_desktop">
-						<ul>
-							<li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/emails')} className="visible-lg visible-md">Emails</a></li>
-							<li className=""><a href="javascript:void(0)" className="visible-lg visible-md go_to_overview" onClick={()=> this.props.history.push('/faq')} >FAQ</a></li>
-							<li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/about')} className="visible-lg visible-md">About</a></li>
-							<li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/customers')} className="visible-lg visible-md">Customers</a></li>
-							<li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/favorites')} className="visible-lg visible-md">Favorites</a></li>
-							<li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/login')} className="visible-lg visible-md">Login</a></li>
-							
-							<li><div className="mobile_nav_open_button hidden-lg hidden-md"><a href="" id="showRight_1" className="active"><div className="button_icon close_icon"></div></a></div></li>
-						</ul>
-					</nav>
+						<Nav {...this.props} />
 					</div>
 				</div>
 			</div>
@@ -184,7 +173,7 @@ class App extends Component {
 				
 					<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 						<div className="iconbox content_anim3 animated fadeInUp">
-							<div className="iconbox_icon"></div>
+							<div data-icon="&#xe024;" className="iconbox_icon"></div>
 							<div className="iconbox_content">
 								<h5>Responsive Design</h5>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore.</p>
@@ -194,7 +183,7 @@ class App extends Component {
 					
 					<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 						<div className="iconbox content_anim4 animated fadeInUp">
-							<div className="iconbox_icon"></div>
+							<div data-icon="&#xe08e;" className="iconbox_icon"></div>
 							<div className="iconbox_content">
 								<h5>Clean Code</h5>
 								<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -204,7 +193,7 @@ class App extends Component {
 					
 					<div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 						<div className="iconbox content_anim5 animated fadeInUp">
-							<div className="iconbox_icon"></div>
+							<div data-icon="&#xe0be;" className="iconbox_icon"></div>
 							<div className="iconbox_content">
 								<h5>1500+ Icons</h5>
 								<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -579,10 +568,10 @@ class App extends Component {
 						<div className="social_icons_container align-center">
 							<div className="social_icons">
 								<ul>
-									<li><div className="social_icon twitter_icon" ></div></li>
-									<li><div className="social_icon facebook_icon" ></div></li>
-									<li><div className="social_icon linkdin_icon" ></div></li>
-									<li><div className="social_icon dribbble_icon"></div></li>
+									<li><div data-icon="&#xe282;" class="social_icon twitter_icon" ></div></li>
+				                    <li><div data-icon="&#xe281;" class="social_icon facebook_icon" ></div></li>
+				                    <li><div data-icon="&#xe279;" class="social_icon linkdin_icon" ></div></li>
+				                    <li><div data-icon="&#xe27f;" class="social_icon dribbble_icon" ></div></li>
 								</ul>
 							</div>
 						</div>  
