@@ -7,7 +7,8 @@ class Nav extends Component {
         super(props);
         this.state = {
         	openUpdateSubscription: false,
-        	openEditAccount: false
+        	openEditAccount: false,
+        	openPaymentDetails: false
         }
     }
 	handleUpdateSubscriptionClose = () => {
@@ -20,8 +21,13 @@ class Nav extends Component {
 			openEditAccount: false
 		})
 	}
+	handlePaymentDetails = () => {
+		this.setState({
+			openPaymentDetails: false
+		})
+	}
     render() {
-    	let {openUpdateSubscription, openEditAccount} = this.state;
+    	let {openUpdateSubscription, openEditAccount, openPaymentDetails} = this.state;
         return (
           	<nav className="navigation_desktop">
 				<ul>
@@ -32,10 +38,10 @@ class Nav extends Component {
 					<li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/favorites')} className="visible-lg visible-md">Favorites</a></li>
 					<li className="drop_down"><a href="javascript:void(0)" onClick={()=> this.props.history.push('/login')} className="visible-lg visible-md">Login</a></li>
 				  	<li className="drop_down"><a href="javascript:void(0)" className="visible-lg visible-md">Account <span data-icon="&#xe104;" ></span>
-						<ul class="dropdown-menu dropdown-content">
+						<ul className="dropdown-menu dropdown-content">
 					    	<li><a href="javascript:void(0)" onClick={()=> this.setState({openUpdateSubscription: true})} >Subscription</a></li>
 					    	<li><a href="javascript:void(0)" onClick={()=> this.setState({openEditAccount: true})} >Account Details</a></li>
-					    	<li><a href="#">Payment Details</a></li>
+					    	<li><a href="javascript:void(0)" onClick={()=> this.setState({openPaymentDetails: true})} >Payment Details</a></li>
 					    	<li><a href="#">Sign Out</a></li>
 					  	</ul> 
 				  	</a></li>
@@ -135,6 +141,112 @@ class Nav extends Component {
 				        <TextField floatingLabelText="Input your current password" type="password" style={{width: '100%'}} />
 				        <RaisedButton style={{justifyContent: 'center', alignItems: 'center',margin: '20px 0px 20px 0px'}} label="Update Account" primary={true} />
 
+			        </Dialog>
+			        <Dialog
+			          title={
+			          	<div>
+			          		Payment Details
+			          		<Close onClick={this.handlePaymentDetails} style={{cursor:'pointer', float:'right', marginTop: '5px', width: '20px', color: 'white'}} />
+			          	</div>
+			          }
+			          // actions={actions}
+			          modal={false}
+			          titleStyle={{backgroundImage: '-webkit-linear-gradient(top left, #2196F3 0%, #311B92 100%)', color: 'white'}}
+			          open={openPaymentDetails}
+			          // open={true}
+			          contentStyle={{width: '50%', maxWidth: 'none'}}
+			          bodyStyle={{ padding: '0px 24px 0px'}}
+			          onRequestClose={this.handlePaymentDetails}
+			          autoScrollBodyContent={true}
+			        >
+						<div className="panel panel-default credit-card-box" style={{margin:20}} >
+		                    <div className="panel-heading display-table" >
+		                        <div className="row display-tr" >
+		                            <h3 className="panel-title display-td" >Payment Details</h3>
+		                            <div className="display-td" >                            
+		                                <img className="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png"/>
+		                            </div>
+		                        </div>                    
+		                    </div>
+		                    <div className="panel-body">
+		                        <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+		                            <div className="row">
+		                                <div className="col-xs-12">
+		                                    <div className="form-group">
+		                                        <label for="cardNumber">CARD NUMBER</label>
+		                                        <div className="input-group">
+		                                            <input 
+		                                                type="tel"
+		                                                className="form-control"
+		                                                name="cardNumber"
+		                                                placeholder="Valid Card Number"
+		                                                autocomplete="cc-number"
+		                                                required autofocus 
+		                                            />
+		                                            <span className="input-group-addon"><i className="fa fa-credit-card"></i></span>
+		                                        </div>
+		                                    </div>                            
+		                                </div>
+		                            </div>
+		                            <div className="row">
+		                                <div className="col-xs-7 col-md-7">
+		                                    <div className="form-group">
+		                                        <label for="cardExpiry"><span className="hidden-xs">EXPIRATION</span><span className="visible-xs-inline">EXP</span> DATE</label>
+		                                        <input 
+		                                            type="tel" 
+		                                            className="form-control" 
+		                                            name="cardExpiry"
+		                                            placeholder="MM / YY"
+		                                            autocomplete="cc-exp"
+		                                            required 
+		                                        />
+		                                    </div>
+		                                </div>
+		                                <div className="col-xs-5 col-md-5 pull-right">
+		                                    <div className="form-group">
+		                                        <label for="cardCVC">CV CODE</label>
+		                                        <input 
+		                                            type="tel" 
+		                                            className="form-control"
+		                                            name="cardCVC"
+		                                            placeholder="CVC"
+		                                            autocomplete="cc-csc"
+		                                            required
+		                                        />
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div className="row">
+		                                <div className="col-xs-5 col-md-5">
+		                                    <div className="form-group">
+		                                        <label for="cardNumber">Your Current Password</label>
+		                                        <div className="input-group" style={{border: '1px solid #ccc', borderRadius: 6}} >
+		                                            <input 
+		                                                type="password"
+		                                                className="form-control"
+		                                                name="cardNumber"
+		                                                placeholder="Password"
+		                                                autocomplete="cc-number"
+		                                                required autofocus 
+		                                            />
+		                                            
+		                                        </div>
+		                                    </div>                            
+		                                </div>
+		                            </div>
+		                            <div className="row">
+		                                <div className="col-xs-12">
+		                                    <button className="subscribe btn btn-success btn-lg btn-block" type="button">Start Subscription</button>
+		                                </div>
+		                            </div>
+		                            <div className="row">
+		                                <div className="col-xs-12">
+		                                    <p className="payment-errors"></p>
+		                                </div>
+		                            </div>
+		                        </form>
+		                    </div>
+		                </div>
 			        </Dialog>			
 					<li><div className="mobile_nav_open_button hidden-lg hidden-md"><a href="" id="showRight_1" className="active"><div className="button_icon close_icon"></div></a></div></li>
 				</ul>
