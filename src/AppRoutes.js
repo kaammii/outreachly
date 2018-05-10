@@ -14,6 +14,7 @@ import Customers from './Customers';
 import NewPitch from './NewPitch';
 import Favorites from './Favorites';
 import Emails from './Emails';
+import Signup from './Signup';
 
 const ParentApp = () => (
   <div>
@@ -29,6 +30,7 @@ const ParentApp = () => (
     <Route path="/newpitch" component={NewPitch} />
     <Route path="/favorites" component={Favorites} />
     <Route path="/emails" component={Emails} />
+    <Route path="/signup" component={Signup} />
     {/* <Route path="/signup" component={SignUp} /> */}
      {/* <Route path="/dashboard" component={Dashboard} /> */}
 	  {/*<Route path='/dashboardClient/:firstid/:secondid' component={DashboardClient} /> */}

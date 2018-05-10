@@ -26,26 +26,37 @@ class Nav extends Component {
 			openPaymentDetails: false
 		})
 	}
+	handleLogout = () => {
+		localStorage.removeItem('outReachlyToken');
+		this.props.history.push('/')
+	}
     render() {
+    	let token = localStorage.getItem('outReachlyToken');
     	let {openUpdateSubscription, openEditAccount, openPaymentDetails} = this.state;
         return (
           	<nav className="navigation_desktop">
 				<ul>
+					{token &&
 					<li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/emails')} className="visible-lg visible-md">Emails</a></li>
+					}
 					<li className=""><a href="javascript:void(0)" className="visible-lg visible-md go_to_overview" onClick={()=> this.props.history.push('/faq')} >FAQ</a></li>
 					<li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/about')} className="visible-lg visible-md">About</a></li>
 					<li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/customers')} className="visible-lg visible-md">Customers</a></li>
+					{token &&
 					<li className=""><a href="javascript:void(0)" onClick={()=> this.props.history.push('/favorites')} className="visible-lg visible-md">Favorites</a></li>
+					}
+					{!token ?
 					<li className="drop_down"><a href="javascript:void(0)" onClick={()=> this.props.history.push('/login')} className="visible-lg visible-md">Login</a></li>
+				  	:
 				  	<li className="drop_down"><a href="javascript:void(0)" className="visible-lg visible-md">Account <span data-icon="&#xe104;" ></span>
 						<ul className="dropdown-menu dropdown-content">
 					    	<li><a href="javascript:void(0)" onClick={()=> this.setState({openUpdateSubscription: true})} >Subscription</a></li>
 					    	<li><a href="javascript:void(0)" onClick={()=> this.setState({openEditAccount: true})} >Account Details</a></li>
 					    	<li><a href="javascript:void(0)" onClick={()=> this.setState({openPaymentDetails: true})} >Payment Details</a></li>
-					    	<li><a href="#">Sign Out</a></li>
+					    	<li><a href="/" onClick={this.handleLogout} >Sign Out</a></li>
 					  	</ul> 
 				  	</a></li>
-
+					}	
 					<Dialog
 			          title={
 			          	<div>

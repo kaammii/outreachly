@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
@@ -9,9 +9,38 @@ import Help from 'material-ui/svg-icons/action/help';
 import TextField from 'material-ui/TextField';
 import {Link} from 'react-router-dom';
 
-const Login = () => {
-
-  const styles = {
+export default class Login extends Component {
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      email: '',
+      password: ''
+    };
+  }
+  
+  handleLogin = () => {
+    let { email, password } = this.state;
+    fetch('http://localhost:4000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password
+      }),
+    }).then((res)=> res.json()).then((resJson)=> {
+      if (resJson.meta.code===200) {
+        let token = resJson.data.token;
+        localStorage.setItem('outReachlyToken', token);
+        this.props.history.push('/');
+      }
+    });
+  }
+  render(){
+    let { props } = this.props;
+    const styles = {
     loginContainer: {
       minWidth: 320,
       maxWidth: 400,
@@ -69,7 +98,6 @@ const Login = () => {
       marginLeft: 5
     },
   };
-
   return (
       <div style={{background: '#eee'}} >
         <div style={styles.loginContainer}>
@@ -79,10 +107,12 @@ const Login = () => {
             <form>
               <TextField
                 floatingLabelText="E-mail"
+                onChange={(e)=> this.setState({ email: e.target.value })}
                 fullWidth={true}
               />
               <TextField
                 floatingLabelText="Password"
+                onChange={(e)=> this.setState({ password: e.target.value })}
                 fullWidth={true}
                 type="password"
               />
@@ -95,11 +125,10 @@ const Login = () => {
                   iconStyle={styles.checkRemember.iconStyle}
                 />
 
-                <Link to="/">
                   <RaisedButton label="Login"
                                 primary={true}
+                                onClick={this.handleLogin}
                                 style={styles.loginBtn}/>
-                </Link>
               </div>
             </form>
           </Paper>
@@ -107,7 +136,7 @@ const Login = () => {
           <div style={styles.buttonsDiv}>
             <FlatButton
               label="Register"
-              href="/"
+              onClick={()=> props.history.push('/signup')}
               style={styles.flatButton}
               icon={<PersonAdd />}
             />
@@ -133,6 +162,5 @@ const Login = () => {
         </div>
       </div>
   );
+  }
 };
-
-export default Login;

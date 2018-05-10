@@ -40,6 +40,7 @@ class App extends Component {
 	  slidesToShow: 1,
 	  slidesToScroll: 1,
 	}
+	let token = localStorage.getItem('outReachlyToken');
 	return (
 	<div>        
 	<div className="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
@@ -89,13 +90,18 @@ class App extends Component {
 						
 						{/* CTA Buttons*/}
 						<div className="cta_button_area">
-							{/* <div><RaisedButton primary={true} label={'Sign up'} /></div>
-							<a><small>Not sure? Learn more.</small></a> */}
+							{!token ?
+							<div>
+								<div><RaisedButton primary={true} onClick={()=> this.props.history.push('/signup')} label={'Sign up'} /></div>
+								<a><small>Not sure? Learn more.</small></a>
+							</div> 
+							:
 							<SearchBar 
 								onChange={(val) => this.setState({searchTerm: val})}
 								style={{backgroundColor: 'white', margin: '0 auto', maxWidth: 800}} 
 								onRequestSearch={this.handleSearch}
 							/>
+							}
 						</div>
 						{/* //CTA Buttons*/}
 									
