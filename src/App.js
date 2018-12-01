@@ -90,7 +90,7 @@ class App extends Component {
 						
 						{/* CTA Buttons*/}
 						<div className="cta_button_area">
-							{!token ?
+							{/*!token ?
 							<div>
 								<div><RaisedButton primary={true} onClick={()=> this.props.history.push('/signup')} label={'Sign up'} /></div>
 								<a><small>Not sure? Learn more.</small></a>
@@ -101,7 +101,12 @@ class App extends Component {
 								style={{backgroundColor: 'white', margin: '0 auto', maxWidth: 800}} 
 								onRequestSearch={this.handleSearch}
 							/>
-							}
+							*/}
+							<SearchBar 
+								onChange={(val) => this.setState({searchTerm: val})}
+								style={{backgroundColor: 'white', margin: '0 auto', maxWidth: 800}} 
+								onRequestSearch={this.handleSearch}
+							/>
 						</div>
 						{/* //CTA Buttons*/}
 									
