@@ -16,6 +16,8 @@ import Badge from 'material-ui/Badge';
 import Person from 'material-ui/svg-icons/social/person';
 import Typist from 'react-typist';
 import Nav from './Nav';
+import SearchTable from './components/SearchTable/'
+const API_KEY = 'AIzaSyAIMe3PHOrR5SYTEhHv09LuNnOMKhiWwR4';
 
 const styles = {
     headline: {
@@ -109,15 +111,22 @@ export default class Searched extends Component {
                 },
             ]
         }
+        this.search = this.search.bind(this)
     }
-    componentWillMount(){
-        let results = Results.results;
-        // console.log(Results.results);
-        let searchedTerm = this.props.location.search.split('=')[1].split('%20')+"";
-        this.setState({
-            searchedTerm: searchedTerm,
-            results: results
-        })
+    
+    // componentWillMount(){
+    //     let results = Results.results;
+    //     // console.log(Results.results);
+    //     let searchedTerm = this.props.location.search.split('=')[1].split('%20')+"";
+    //     this.setState({
+    //         searchedTerm: searchedTerm,
+    //         results: results
+    //     })
+    // }
+    async search() {
+        let dataJson = await fetch(`https://www.googleapis.com/youtube/v3/search?type=video&key=${API_KEY}&part=snippet&q=${encodeURIComponent(this.state.searchedTerm)}`);
+        let data  = await dataJson.json();
+        console.log(data);
     }
     render() {
         let { results } = this.state;
@@ -159,9 +168,9 @@ export default class Searched extends Component {
                                     <a><small>Not sure? Learn more.</small></a> */}
                                     <SearchBar 
                                         value={this.state.searchedTerm}
-                                        onChange={() => console.log('onChange')}
+                                        onChange={(e) => this.setState({ searchedTerm: e })}
                                         style={{backgroundColor: 'white', margin: '0 auto', maxWidth: 800}} 
-                                        onRequestSearch={() => console.log('onRequestSearch')}
+                                        onRequestSearch={this.search}
                                     />
                                 </div>
                                 {/* //CTA Buttons*/}
@@ -217,6 +226,10 @@ export default class Searched extends Component {
                         </nav>
                     </div>
                 </header>{/* // Menu bar */}
+                <section className="subsection" style={{ padding: 0, background: '#EEEEEE' }} >
+                    <SearchTable />
+                </section>
+                {/*
                 <section className="subsection" style={{paddingTop: 0, background: '#EEEEEE'}}>
                     <div>
                     <Tabs style={{color: 'white'}} >
@@ -265,7 +278,6 @@ export default class Searched extends Component {
                                         primaryText={item.title}
                                         rightIconButton={ 
                                             <div style={{ display: 'flex', justifyContent: 'space-between'}} >
-                                                {/* <RaisedButton label="*" /> */}
                                                 <RaisedButton label="Send Email" onClick={()=>this.props.history.push('/newpitch')} primary={true} />
                                             </div>
                                         }
@@ -297,6 +309,8 @@ export default class Searched extends Component {
                     </Tabs>
                     </div>
                 </section>
+                */}
+
                 <section id="footer" className="subsection">
                     <div className="container">
                         <div className="row">
